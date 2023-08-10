@@ -16,6 +16,13 @@
   },
   "author": "NZIP Contributors <dev@ifconfig.la>",
   "homepage": "https://nzip.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ifconfigla/nzip.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ifconfigla/nzip/issues"
+  },
   "funding": "https://nzip.dev/#donations",
   "license": "MIT",
   "files": [

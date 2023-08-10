@@ -35,10 +35,17 @@ Node.js LTS version (See the [official node.js download page](https://nodejs.org
   $ npx nzip "fileToInclude1, fileToInclude2, folderToInclude1" "fileToExclude1"
 ```
 
+or
+
+```bash
+  $ npx @ifconfigla/nzip "fileToInclude1, fileToInclude2, folderToInclude1" "fileToExclude1"
+```
+
 - Running via npm global install
 
 ```bash
   $ npm i -g nzip
+  $ npm i -g @ifconfigla/nzip
   $ nzip "fileToInclude1, fileToInclude2, folderToInclude1" "fileToExclude1"
 ```
 
