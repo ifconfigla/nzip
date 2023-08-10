@@ -4,7 +4,7 @@ PACKAGE_NAME=($(jq -r '.name' package.json))
 PACKAGE_VERSION=($(jq -r '.version' package.json))
 
 nzip -p && mv ${PACKAGE_NAME}.zip dist/${PACKAGE_NAME}-${PACKAGE_VERSION}-src.zip
-cp ifconfig-dev.pub dist
+cp ifconfig-dev.asc dist
 cd dist
 rm SHA256SUMS SHA256SUMS.asc
 chmod +x ${PACKAGE_NAME}-linux

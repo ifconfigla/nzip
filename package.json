@@ -29,7 +29,7 @@
     ".eslintrc.js",
     ".gitignore",
     "scripts",
-    "ifconfig-dev.pub",
+    "ifconfig-dev.asc",
     "files.example.json",
     "index.js",
     "LICENSE",
