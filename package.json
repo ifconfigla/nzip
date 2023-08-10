@@ -14,7 +14,9 @@
     "start": "node ./start.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "NZIP Contributors",
+  "author": "NZIP Contributors <dev@ifconfig.la>",
+  "homepage": "https://nzip.dev",
+  "funding": "https://nzip.dev/#donations",
   "license": "MIT",
   "files": [
     ".eslintrc.js",
