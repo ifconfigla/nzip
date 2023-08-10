@@ -1,0 +1,51 @@
+{
+  "name": "nzip",
+  "version": "1.0.0",
+  "description": "A fast & low-memory consuming archiver built on fflate and Node.js",
+  "main": "index.js",
+  "bin": {
+    "nzip": "./start.js"
+  },
+  "scripts": {
+    "lint": "eslint ./*.{js,jsx}",
+    "lint:fix": "eslint ./*.{js,jsx} --fix",
+    "build": "pkg -d --no-native-build --no-signature --no-bytecode -c ./package.json ./start.js",
+    "dist": "npm run build && ./scripts/pack.sh",
+    "start": "node ./start.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "NZIP Contributors",
+  "license": "MIT",
+  "files": [
+    ".eslintrc.js",
+    ".gitignore",
+    "scripts",
+    "ifconfig-dev.pub",
+    "files.example.json",
+    "index.js",
+    "LICENSE",
+    "README.md",
+    "start.js"
+  ],
+  "target": "node18",
+  "pkg": {
+    "scripts": [
+      "*.js",
+      "node_modules/fflate/**/*.{js,cjs}"
+    ],
+    "targets": [
+      "node18-linux-x64",
+      "node18-macos-x64",
+      "node18-win-x64"
+    ],
+    "outputPath": "dist"
+  },
+  "dependencies": {
+    "commander": "^11.0.0",
+    "fflate": "^0.8.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.46.0",
+    "pkg": "^5.8.1"
+  }
+}
