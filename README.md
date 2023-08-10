@@ -2,6 +2,8 @@
 
 A fast & low-memory consuming archiver built on [fflate](https://github.com/101arrowz/fflate) and [Node.js](https://nodejs.org/en)
 
+https://github.com/ifconfigla/nzip
+
 ## Highlights
 
 - Fast: Built on top of [fflate](https://github.com/101arrowz/fflate) which supports streaming and multi-threads.
