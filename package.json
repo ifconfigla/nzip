@@ -6,6 +6,7 @@
   "bin": {
     "nzip": "./start.js"
   },
+  "github": "ifconfigla/nzip",
   "scripts": {
     "lint": "eslint ./*.{js,jsx}",
     "lint:fix": "eslint ./*.{js,jsx} --fix",
