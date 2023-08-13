@@ -1,6 +1,6 @@
 {
   "name": "nzip",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A fast & low-memory consuming archiver built on fflate and Node.js",
   "main": "index.js",
   "bin": {
@@ -44,18 +44,24 @@
       "node_modules/fflate/**/*.{js,cjs}"
     ],
     "targets": [
-      "node18-linux-x64",
-      "node18-macos-x64",
-      "node18-win-x64"
+      "node18.15.0-linux-x64",
+      "node18.15.0-macos-x64",
+      "node18.15.0-win-x64"
     ],
     "outputPath": "dist"
   },
   "dependencies": {
     "commander": "^11.0.0",
-    "fflate": "^0.8.0"
+    "fflate": "^0.8.0",
+    "pkg-fetch": "^3.5.2"
   },
   "devDependencies": {
     "eslint": "^8.46.0",
     "pkg": "^5.8.1"
+  },
+  "overrides": {
+    "pkg": {
+      "pkg-fetch": "^3.5.2"
+    }
   }
 }

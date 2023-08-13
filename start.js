@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const { Command, InvalidArgumentError } = require('commander');
 const fs = require('fs');
+const process = require('process');
 const createZip = require('./index');
 const program = new Command();
 const { name, version, description } = require('./package.json');
@@ -20,10 +21,11 @@ const checkString = (value, dummyPrevious, param, stringLength = 0) => {
 program
   .name(name)
   .description(
-    description
+    `${name} ${version} (Node ${process.version})\n\n`
+      + description
       + `\n\nExample: ${name} nzip.zip "file1, file2, folder1, folder2" "excludeFile1, excludeFile2"`
   )
-  .version(version)
+  .version(`${name} ${version} (Node ${process.version})\n\n`)
   .argument('[zipName]', 'Name for archive name (nzip.zip)')
   .argument('[files]', 'List of files or folders to include')
   .argument('[filteredFiles]', 'List of files not to include')
