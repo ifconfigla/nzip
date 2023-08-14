@@ -53,15 +53,15 @@
   "dependencies": {
     "@ifconfigla/fflate": "0.8.1",
     "commander": "11.0.0",
-    "pkg-fetch": "^3.5.2"
+    "pkg-fetch": "3.5.2"
   },
   "devDependencies": {
-    "eslint": "^8.46.0",
-    "pkg": "^5.8.1"
+    "eslint": "8.46.0",
+    "pkg": "5.8.1"
   },
   "overrides": {
     "pkg": {
-      "pkg-fetch": "^3.5.2"
+      "pkg-fetch": "3.5.2"
     }
   }
 }

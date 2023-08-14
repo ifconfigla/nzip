@@ -38,11 +38,13 @@ const resolveFiles = (dirOrFile) => {
 const createZip = async ({
   files,
   filteredFiles = [],
-  zipName = `nzip_${parseInt(new Date().getTime() / 1000)}.zip`
+  zipName = `nzip_${parseInt(new Date().getTime() / 1000)}.zip`,
+  resetTimestamp = false
 }) => {
   // Scan files
   const filesRes = files.map(f => resolveFiles(f)).flat().filter(f => !filteredFiles.includes(f));
-  const mtimeList = filesRes.map(f => fs.statSync(f).mtime ? new Date(fs.statSync(f).mtime) : new Date(0));
+  // Default date to Jan 01 1980
+  const mtimeList = filesRes.map(f => (!resetTimestamp && fs.statSync(f).mtime) ? new Date(fs.statSync(f).mtime) : new Date(315532800000));
 
   // Initialize writeStream to dir.zip
   const writeStream = fs.createWriteStream(zipName);

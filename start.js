@@ -38,6 +38,10 @@ program
     'Read the files list from files.json',
     checkString
   )
+  .option(
+    '-t, --reset-timestamp',
+    'Force archive timestamp to zero, required for determistic zip generation without timestamp'
+  )
   .action((zipName, files, filteredFiles, options) => {
     if (options.packageJson && fs.existsSync('package.json')) {
       const pkgJson = JSON.parse(fs.readFileSync('package.json', { encoding: 'utf8' }));
@@ -68,7 +72,7 @@ program
       filteredFiles = filteredFiles.replaceAll(/\s/g, '').split(',');
     }
 
-    createZip({files, zipName, filteredFiles});
+    createZip({files, zipName, filteredFiles, resetTimestamp: options.resetTimestamp});
   });
 
 program.parse();
