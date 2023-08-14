@@ -21,8 +21,7 @@ ${description}
 Simple one liner install for linux
 
 \`\`\`bash
-wget https://github.com/${githubUrl}/releases/download/v${version}/${name}-${version}-x86_64-linux.zip && \\
-unzip ${name}-${version}-x86_64-linux.zip && rm ${name}-${version}-x86_64-linux.zip && \\
+wget -qO- https://github.com/${githubUrl}/releases/download/v${version}/${name}-${version}-x86_64-linux.tar.gz | tar xvz && \\
 sudo mv ${name} /usr/local/bin
 \`\`\`
 
@@ -49,8 +48,8 @@ wget -qO- https://github.com/${githubUrl}/releases/download/v${version}/${pubKey
 Then, download the release binaries with the signed file and verify those
 
 \`\`\`bash
-wget https://github.com/${githubUrl}/releases/download/v${version}/${name}-${version}-x86_64-darwin.zip && \\
-wget https://github.com/${githubUrl}/releases/download/v${version}/${name}-${version}-x86_64-linux.zip && \\
+wget https://github.com/${githubUrl}/releases/download/v${version}/${name}-${version}-x86_64-darwin.tar.gz && \\
+wget https://github.com/${githubUrl}/releases/download/v${version}/${name}-${version}-x86_64-linux.tar.gz && \\
 wget https://github.com/${githubUrl}/releases/download/v${version}/${name}-${version}-x86_64-win.zip && \\
 wget https://github.com/${githubUrl}/releases/download/v${version}/SHA256SUMS.asc
 

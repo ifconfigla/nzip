@@ -11,9 +11,9 @@ cd dist
 rm SHA256SUMS SHA256SUMS.asc
 chmod +x ${PACKAGE_NAME}-linux
 chmod +x ${PACKAGE_NAME}-macos
-mv ${PACKAGE_NAME}-linux ${PACKAGE_NAME} && nzip -t ${PACKAGE_NAME}-${PACKAGE_VERSION}-x86_64-linux.zip ${PACKAGE_NAME} && rm ${PACKAGE_NAME}
-mv ${PACKAGE_NAME}-macos ${PACKAGE_NAME} && nzip -t ${PACKAGE_NAME}-${PACKAGE_VERSION}-x86_64-darwin.zip ${PACKAGE_NAME} && rm ${PACKAGE_NAME}
-mv ${PACKAGE_NAME}-win.exe ${PACKAGE_NAME}.exe && nzip -t ${PACKAGE_NAME}-${PACKAGE_VERSION}-x86_64-win.zip ${PACKAGE_NAME}.exe && rm ${PACKAGE_NAME}.exe
+mv ${PACKAGE_NAME}-linux ${PACKAGE_NAME} && tar -czvf ${PACKAGE_NAME}-${PACKAGE_VERSION}-x86_64-linux.tar.gz ${PACKAGE_NAME} && rm ${PACKAGE_NAME}
+mv ${PACKAGE_NAME}-macos ${PACKAGE_NAME} && tar -czvf ${PACKAGE_NAME}-${PACKAGE_VERSION}-x86_64-darwin.tar.gz ${PACKAGE_NAME} && rm ${PACKAGE_NAME}
+mv ${PACKAGE_NAME}-win.exe ${PACKAGE_NAME}.exe && zip ${PACKAGE_NAME}-${PACKAGE_VERSION}-x86_64-win.zip ${PACKAGE_NAME}.exe && rm ${PACKAGE_NAME}.exe
 sha256sum * > SHA256SUMS
 
 if [[ ! -v GITHUB_ACTIONS ]]; then

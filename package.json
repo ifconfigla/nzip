@@ -1,6 +1,6 @@
 {
   "name": "nzip",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A fast & low-memory consuming archiver built on fflate and Node.js",
   "main": "index.js",
   "bin": {
