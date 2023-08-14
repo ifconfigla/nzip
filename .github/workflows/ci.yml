@@ -18,7 +18,13 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm i && npm link
       - run: npm run dist
-      - run: npm publish --access public
+      #- run: npm publish --access public
+      #  env:
+      #    NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: npm publish @ifconfigla/nzip
+        run: |
+          patch -p0 < package.json.patch && \
+             npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Release
