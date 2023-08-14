@@ -1,6 +1,6 @@
 {
   "name": "nzip",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A fast & low-memory consuming archiver built on fflate and Node.js",
   "main": "index.js",
   "bin": {
@@ -51,8 +51,8 @@
     "outputPath": "dist"
   },
   "dependencies": {
-    "commander": "^11.0.0",
-    "fflate": "^0.8.0",
+    "@ifconfigla/fflate": "0.8.1",
+    "commander": "11.0.0",
     "pkg-fetch": "^3.5.2"
   },
   "devDependencies": {

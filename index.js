@@ -1,4 +1,4 @@
-const { Zip, AsyncZipDeflate } = require('fflate');
+const { Zip, AsyncZipDeflate } = require('@ifconfigla/fflate');
 const fs = require('fs');
 const path = require('path');
 
@@ -42,6 +42,7 @@ const createZip = async ({
 }) => {
   // Scan files
   const filesRes = files.map(f => resolveFiles(f)).flat().filter(f => !filteredFiles.includes(f));
+  const mtimeList = filesRes.map(f => fs.statSync(f).mtime ? new Date(fs.statSync(f).mtime) : new Date(0));
 
   // Initialize writeStream to dir.zip
   const writeStream = fs.createWriteStream(zipName);
@@ -54,8 +55,11 @@ const createZip = async ({
     }
   });
 
+  let fileIndex = 0;
+
   for await (const file of filesRes) {
-    const fileZip = new AsyncZipDeflate(file);
+    const mtime = mtimeList[fileIndex];
+    const fileZip = new AsyncZipDeflate(file, { mtime });
     zip.add(fileZip);
 
     await new Promise((res, rej) => {
@@ -68,6 +72,7 @@ const createZip = async ({
       });
       readStream.on('error', rej);
     });
+    fileIndex++;
 
     console.log(`[NZIP] Processing ${file}`);
   }
